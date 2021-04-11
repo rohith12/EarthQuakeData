@@ -96,9 +96,9 @@
 				387161B526235ED000A0433D /* ViewContollers */,
 				381EAEA32617B873009B53C8 /* View */,
 				381EAE9E2617AC89009B53C8 /* Models */,
+				387161B6262360A700A0433D /* Helpers */,
 				381EAE7A26166AE0009B53C8 /* AppDelegate.swift */,
 				381EAE7C26166AE0009B53C8 /* SceneDelegate.swift */,
-				381EAE9C26178E9E009B53C8 /* ServiceHelper.swift */,
 				381EAE8326166AEA009B53C8 /* Assets.xcassets */,
 				381EAE8526166AEA009B53C8 /* LaunchScreen.storyboard */,
 				381EAE8826166AEA009B53C8 /* Info.plist */,
@@ -138,10 +138,18 @@
 		387161B526235ED000A0433D /* ViewContollers */ = {
 			isa = PBXGroup;
 			children = (
-				387161B32622689F00A0433D /* DetailsViewController.swift */,
 				381EAE7E26166AE0009B53C8 /* EarthQuakeViewController.swift */,
+				387161B32622689F00A0433D /* DetailsViewController.swift */,
 			);
 			path = ViewContollers;
+			sourceTree = "<group>";
+		};
+		387161B6262360A700A0433D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				381EAE9C26178E9E009B53C8 /* ServiceHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
