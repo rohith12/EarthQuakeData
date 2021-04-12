@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 
 class DetailsViewController: UIViewController {
-    var webView: WKWebView!
+    var webView: WKWebView?
     var urlString = ""
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -18,19 +18,21 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         setupWebView()
         self.view.bringSubviewToFront(self.activityIndicator)
-        if let url = URL(string: urlString) {
-            webView.load(URLRequest(url: url))
-            webView.allowsBackForwardNavigationGestures = true
+        if let webViewUnwrapped = webView, let url = URL(string: urlString) {
+            webViewUnwrapped.load(URLRequest(url: url))
+            webViewUnwrapped.allowsBackForwardNavigationGestures = true
         }
     }
     
     private func setupWebView() {
-      let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.uiDelegate = self
-        webView.navigationDelegate = self
-        webView.frame = self.view.bounds
-        self.view.addSubview(webView)
+        let webConfiguration = WKWebViewConfiguration()
+        webView  = WKWebView(frame: .zero, configuration: webConfiguration)
+        if let webViewUnwrapped = webView  {
+            webViewUnwrapped.uiDelegate = self
+            webViewUnwrapped.navigationDelegate = self
+            webViewUnwrapped.frame = self.view.bounds
+            self.view.addSubview(webViewUnwrapped)
+        }
     }
     
     private func showAlertView(message: Error) {
