@@ -15,34 +15,34 @@
                 <rect key="frame" x="0.0" y="0.0" width="383" height="135"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="u5K-vE-p0e">
-                        <rect key="frame" x="20" y="20" width="374" height="95"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FOs-lG-ppN">
+                        <rect key="frame" x="4" y="8" width="374" height="116"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbk-KY-TSq">
-                                <rect key="frame" x="0.0" y="0.0" width="374" height="21"/>
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="58"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="cGz-N6-G7p"/>
-                                    <constraint firstAttribute="height" constant="21" id="hnn-ES-Sn2"/>
+                                    <constraint firstAttribute="width" constant="374" id="LXg-Ia-2AE"/>
+                                    <constraint firstAttribute="height" constant="58" id="iCs-F7-46B"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoH-GX-8rl">
-                                <rect key="frame" x="0.0" y="37" width="374" height="21"/>
+                                <rect key="frame" x="0.0" y="66" width="374" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="DFv-0z-YiX"/>
-                                    <constraint firstAttribute="height" constant="21" id="eP3-g1-AL2"/>
+                                    <constraint firstAttribute="height" constant="21" id="QD7-2r-w9E"/>
+                                    <constraint firstAttribute="width" constant="374" id="Sgh-x1-M1r"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggK-mC-s94">
-                                <rect key="frame" x="0.0" y="74" width="374" height="21"/>
+                                <rect key="frame" x="0.0" y="95" width="374" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="FaX-cX-h60"/>
-                                    <constraint firstAttribute="width" constant="374" id="qy7-Uo-0Up"/>
+                                    <constraint firstAttribute="height" constant="21" id="00i-mD-GFJ"/>
+                                    <constraint firstAttribute="width" constant="374" id="Uds-WK-TMj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -52,10 +52,10 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="u5K-vE-p0e" secondAttribute="bottom" constant="20" id="1Di-XS-QtM"/>
-                    <constraint firstAttribute="trailing" secondItem="u5K-vE-p0e" secondAttribute="trailing" constant="25" id="Oyt-Vq-m9g"/>
-                    <constraint firstItem="u5K-vE-p0e" firstAttribute="leading" secondItem="8ys-hz-xWh" secondAttribute="leading" constant="20" id="irl-d4-RLB"/>
-                    <constraint firstItem="u5K-vE-p0e" firstAttribute="top" secondItem="8ys-hz-xWh" secondAttribute="top" constant="20" id="jz2-jL-j3d"/>
+                    <constraint firstAttribute="trailing" secondItem="FOs-lG-ppN" secondAttribute="trailing" constant="5" id="7AC-w9-X4u"/>
+                    <constraint firstItem="FOs-lG-ppN" firstAttribute="leading" secondItem="8ys-hz-xWh" secondAttribute="leading" constant="4" id="Shs-w9-Hgw"/>
+                    <constraint firstItem="FOs-lG-ppN" firstAttribute="top" secondItem="8ys-hz-xWh" secondAttribute="top" constant="8" id="w8a-M8-Q2h"/>
+                    <constraint firstAttribute="bottom" secondItem="FOs-lG-ppN" secondAttribute="bottom" constant="11" id="zws-Mj-R2A"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
