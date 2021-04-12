@@ -23,19 +23,38 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="mHN-HZ-olX"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RkE-l6-t8l">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="bPj-C6-Gu2">
+                                        <rect key="frame" x="188.5" y="368.5" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="bPj-C6-Gu2" firstAttribute="centerX" secondItem="RkE-l6-t8l" secondAttribute="centerX" id="Qo1-MB-05Z"/>
+                                    <constraint firstItem="bPj-C6-Gu2" firstAttribute="centerY" secondItem="RkE-l6-t8l" secondAttribute="centerY" id="aez-ug-INb"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="RkE-l6-t8l" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1xv-cl-Yw4"/>
                             <constraint firstItem="MYq-0B-KX9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="41w-gu-Jyu"/>
                             <constraint firstItem="MYq-0B-KX9" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4E1-ql-YVi"/>
+                            <constraint firstItem="RkE-l6-t8l" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4n8-as-wAq"/>
                             <constraint firstItem="MYq-0B-KX9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Lyh-1M-MFx"/>
                             <constraint firstItem="MYq-0B-KX9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Nke-kH-P3t"/>
+                            <constraint firstItem="RkE-l6-t8l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ldG-PS-Kh6"/>
+                            <constraint firstItem="RkE-l6-t8l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ngL-Bm-b7M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="EarthQuakes" id="jtY-8T-X7z"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="bPj-C6-Gu2" id="Oak-hH-qXm"/>
                         <outlet property="earthQuakeTableview" destination="MYq-0B-KX9" id="Djc-lT-z7t"/>
+                        <outlet property="loadingView" destination="RkE-l6-t8l" id="FjF-Yx-g2F"/>
                         <segue destination="ak5-A2-6fa" kind="show" identifier="displayDetails" id="OJv-9k-0QX"/>
                     </connections>
                 </viewController>

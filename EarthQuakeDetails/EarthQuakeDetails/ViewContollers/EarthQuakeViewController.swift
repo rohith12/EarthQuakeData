@@ -15,6 +15,8 @@ class EarthQuakeViewController: UIViewController {
     private var earthQuakes: [EarthQuake] = []
     private var managedObjectContext: NSManagedObjectContext?
     private var displayURL = ""
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,7 @@ class EarthQuakeViewController: UIViewController {
         if let appDeleage = UIApplication.shared.delegate as? AppDelegate {
             managedObjectContext = appDeleage.persistentContainer.viewContext
         }
+        showHideLoadingView(hide: false)
         retriveDataForEarthQuake()
     }
     
@@ -47,6 +50,11 @@ class EarthQuakeViewController: UIViewController {
             }
         }
     }
+    
+    private func showHideLoadingView(hide: Bool) {
+        self.loadingView.isHidden = hide
+        (hide == true) ? self.activityIndicator.stopAnimating() : self.activityIndicator.startAnimating()
+    }
 }
 
 extension EarthQuakeViewController {
@@ -66,6 +74,7 @@ extension EarthQuakeViewController {
                 weakSelf.retrieveCoreDataModel()
             default:
                 DispatchQueue.main.async {
+                    weakSelf.showHideLoadingView(hide: true)
                     weakSelf.showAlertView(message: error)
                 }
             }
@@ -83,6 +92,7 @@ extension EarthQuakeViewController {
             }
             DispatchQueue.main.async {
                 self.earthQuakeTableview.reloadData()
+                self.showHideLoadingView(hide: true)
             }
         }
     }
@@ -147,6 +157,7 @@ extension EarthQuakeViewController {
                 }
                 DispatchQueue.main.async {
                     self.earthQuakeTableview.reloadData()
+                    self.showHideLoadingView(hide: true)
                 }
             } catch {
                 print("fetch error")
