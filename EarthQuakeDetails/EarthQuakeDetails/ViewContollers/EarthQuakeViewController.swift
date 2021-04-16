@@ -60,22 +60,22 @@ class EarthQuakeViewController: UIViewController {
 extension EarthQuakeViewController {
     //MARK: DataSource manager methods
     private func retriveDataForEarthQuake() {
-        serviceHelper.requestForEarthQuakeData(success: { [weak self] (model) in
+        serviceHelper.requestForEarthQuakeData { [weak self] (result) in
             guard let weakSelf = self else {
                 return
             }
-            weakSelf.convertToModel(model: model)
-        }) {[weak self] (error) in
-            guard let weakSelf = self else {
-                return
-            }
-            switch true {
-            case (error as NSError).code == NSURLErrorNotConnectedToInternet:
-                weakSelf.retrieveCoreDataModel()
-            default:
-                DispatchQueue.main.async {
-                    weakSelf.showHideLoadingView(hide: true)
-                    weakSelf.showAlertView(message: error)
+            switch result {
+            case .success(let model):
+                weakSelf.convertToModel(model: model)
+            case .failure(let error):
+                switch true {
+                case (error as NSError).code == NSURLErrorNotConnectedToInternet:
+                    weakSelf.retrieveCoreDataModel()
+                default:
+                    DispatchQueue.main.async {
+                        weakSelf.showHideLoadingView(hide: true)
+                        weakSelf.showAlertView(message: error)
+                    }
                 }
             }
         }

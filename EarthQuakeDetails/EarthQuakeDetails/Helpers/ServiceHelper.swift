@@ -14,7 +14,7 @@ class ServiceHelper {
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
     
-    func requestForEarthQuakeData( success: @escaping (EarthQuakeResponse) -> Void, failure: @escaping (Error) -> Void ) {
+    func requestForEarthQuakeData( handler: @escaping (Result<EarthQuakeResponse, Error>) -> Void) {
         if var baseURL = URLComponents(string: baseURL) {
             baseURL.query = "format=geojson&starttime=\(getCurrentDate())"
             guard let url = baseURL.url else {
@@ -22,14 +22,14 @@ class ServiceHelper {
             }
             dataTask = defaultSession.dataTask(with: url) { data, response, error in
                 if let error = error {
-                    failure(error)
+                    handler(.failure(error))
                 } else if let earthQuakedata = data, let response = response as? HTTPURLResponse,
                     response.statusCode == 200 {
                     do {
                         let earthQuake = try JSONDecoder().decode(EarthQuakeResponse.self, from: earthQuakedata)
-                        success(earthQuake)
+                        handler(.success(earthQuake))
                     } catch {
-                        failure(error)
+                        handler(.failure(error))
                     }
                 }
             }
